@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Memory Club Photobooth</title>  
+  <link rel="stylesheet" href="arsip.css"> 
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="images/ketiganya.png">
+
+</head>
+<body style="background-image: url('beige-kotak.png'); background-size: cover; background-repeat: no-repeat;">
+
+    <header>
+  <!-- Logo kiri -->
+  <a href="index.html">
+    <img src="images/tulisan tmc biru.png" width="215" height="54" alt="The Memory Club">
+  </a>
+
+  <!-- Judul Photobooth -->
+<div class="buttons">
+  <a href="photobooth.html">
+    <img src="images/button-pt.png" width="220" height="auto" alt="Photobooth">
+  </a>
+  <a href="arsip.html">
+    <img src="images/button-archive.png" width="200" height="auto" alt="Arsip">
+  </a>
+</div>
+
+  <!-- Icon rumah kanan -->
+  <a href="navbar.html">
+    <img src="images/home icon.png" width="62" height="59" >
+  </a>
+
+  
+</header>
+
+<div class="archive-header">
+  <img src="images/cat-pp.png" class="cat-icon" >
+  <img src="images/ar-btn.png" class="archive-title">
+</div>
+
+<div id="photo-container" class="card-container">
+  <!-- kalo pake js/ udh nyambung account -->
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 The Memory Club. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('get_foto.php')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('photo-container');
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('photo-card');
+        
+        const img = document.createElement('img');
+        img.src = item.path;
+        img.alt = item.nama_foto;
+        img.style.width = '200px';
+        img.style.height = 'auto';
+        img.style.margin = '10px';
+        img.style.borderRadius = '10px';
+
+        const delBtn = document.createElement('button');
+        delBtn.innerText = 'Hapus';
+        delBtn.style.marginTop = '5px';
+        delBtn.style.padding = '6px 10px';
+        delBtn.style.border = 'none';
+        delBtn.style.background = '#ff4d4d';
+        delBtn.style.color = 'white';
+        delBtn.style.borderRadius = '6px';
+        delBtn.style.cursor = 'pointer';
+
+        delBtn.onclick = () => {
+          if (confirm('Yakin ingin menghapus foto ini?')) {
+            fetch('hapus_foto.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: `id=${item.id}`
+            })
+            .then(res => res.json())
+            .then(res => {
+              alert(res.message);
+              if (res.status === 'success') {
+                card.remove(); // Hapus dari tampilan
+              }
+            })
+            .catch(err => console.error('Error saat menghapus:', err));
+          }
+        };
+
+        card.appendChild(img);
+        card.appendChild(delBtn);
+        container.appendChild(card);
+      });
+    })
+    .catch(error => console.error('Gagal mengambil data:', error));
+});
+</script>
+
+</body>
+</html>

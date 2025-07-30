@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'CutePixel';
+    src: url('fonts/CutePixel.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Heavy.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8FBFEF;
+    display: flex;
+    position: relative;
+    font-family: 'Nexa', sans-serif;
+    margin-top: 50px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exit {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    font-size: 28px;
+    color: #263D64;
+    font-weight: bold;
+    font-family: 'Nexa';
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.login-container {
+    background-color: #FEF7DB;
+    padding: 40px 30px;
+    border-radius: 35px;
+    width: 420px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form h2 {
+    font-size: 35px;
+    color: #263D64;
+    margin: 15px 0 25px;
+    font-family: 'Nexa', 'Fredoka', sans-serif;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #263D64;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #8FBFEF;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Nexa', sans-serif;
+}
+
+.login-form button {
+    background-color: #263D64;
+    color: #FEF7DB;
+    font-size: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    width: 100%;
+    font-family: 'CutePixel', 'Nexa', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #142038;
+}
+
+.avatar {
+    width: 175px;
+    height: auto;
+    margin-bottom: 0px;
+}
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #263D64;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.forgot-link {
+    color: #263D64;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #263D64;
+    font-weight: 500;
+}
+
+.register-link a {
+    color: #8FBFEF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+
+  .login-container {
+    width: 90%;
+  }
+}

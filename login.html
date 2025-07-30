@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Jersey+15&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <a href ="pilihan.html">
+  <div class="exit">X</div>
+  </a>
+
+  <div class="login-container">
+<form class="login-form" action="login.php" method="POST">
+      <img src="rubah-icon.png" alt="Cute Fox" class="avatar" />
+      <h2>Welcome Back!</h2>
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" placeholder="Enter your email" required />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Enter your password" required />
+
+      <div class="remember-forgot">
+        <label>
+          <input type="checkbox" id="remember" /> Remember Me
+        </label>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit">Log In</button>
+
+      <div class="register-link">
+        Don't have an account? <a href="register.html">Register</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

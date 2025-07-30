@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="images/png" sizes="32x32" href="images/ketiganya.png">
+  <title>TMC: Edit Photostrip</title>
+  <link rel="stylesheet" href="editing.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="images/tulisan tmc biru.png" width="215" height="54" alt="The Memory Club">
+  </a>
+   <a href="index.html">
+    <img src="images/tulisan photobooth.png" width="354" height= "auto">
+  </a>
+  <a href="navbar.html">
+    <img src="images/home icon.png" width="62" height="59">
+  </a>
+</header>
+
+<main class="editor-container">
+  <div class="photostrip-wrapper">
+    <div class="canvas-preview-wrapper">
+      <canvas id="stripCanvas" width="480" height="1080"></canvas>
+    </div>
+  </div>
+
+  <div class="editor-right">
+    <div class="crop-instructions">
+      <h4>Crop & Zoom Guide (PC Only)</h4>
+      <ul>
+        <li>Drag the photo to adjust the crop position.</li>
+        <li>Scroll your mouse to zoom in or out.</li>
+        <li>Photos are auto-cropped for a proportional fit.</li>
+        <li>Using a PC is recommended for this feature.</li>
+      </ul>
+    </div>
+
+    <div class="frame-select">
+      <h3>Template Frame</h3>
+      <div id="frameOptions">
+        <div id="frameOptions">
+  <div class="frame-item">
+    <img src="images/frame_totoro.png" class="frame-preview" data-frame="images/frame_totoro.png" />
+    <div class="frame-text">Totoro</div>
+  </div>
+  </div>
+
+  <!-- Anime -->
+  <div>
+  <div class="frame-item">
+    <img src="images/frame_megumi.png" class="frame-preview" data-frame="images/frame_megumi.png" />
+    <div class="frame-text">JJK Megumi</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/fr_kazuha.png" class="frame-preview" data-frame="images/fr_kazuha.png" />
+    <div class="frame-text">GI: Kazuha</div>
+  </div>
+  </div>
+  <div>
+  <div class="frame-item">
+    <img src="images/fr_ayato.png" class="frame-preview" data-frame="images/fr_ayato.png" />
+    <div class="frame-text">GI: Ayato</div>
+  </div>
+  </div>
+  <div>
+  <div class="frame-item">
+    <img src="images/fr_hutao.png" class="frame-preview" data-frame="images/fr_hutao.png" />
+    <div class="frame-text">GI: Hutao</div>
+  </div>
+  </div>
+  <div>
+  <div class="frame-item">
+    <img src="images/fr_furina.png" class="frame-preview" data-frame="images/fr_furina.png" />
+    <div class="frame-text">GI: Furina</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/frame_Castorice.png" class="frame-preview" data-frame="images/frame_Castorice.png" />
+    <div class="frame-text">Castorice</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/frame_kocheng.png" class="frame-preview" data-frame="images/frame_kocheng.png" />
+    <div class="frame-text">Kuchhiing</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/fr_op.png" class="frame-preview" data-frame="images/fr_op.png" />
+    <div class="frame-text">One Piece</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/fr_am.png" class="frame-preview" data-frame="images/fr_am.png" />
+    <div class="frame-text">Arctic Monkeys</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/fr_mcr.png" class="frame-preview" data-frame="images/fr_mcr.png" />
+    <div class="frame-text">MCR</div>
+  </div>
+  </div>
+  <div>
+   <div class="frame-item">
+    <img src="images/fr_1975.png" class="frame-preview" data-frame="images/fr_1975.png" />
+    <div class="frame-text">The 1975</div>
+  </div>
+  </div>
+  <div>
+  <div class="frame-item">
+    <img src="images/fr_hindia_rkr.png" class="frame-preview" data-frame="images/fr_hindia_rkr.png" />
+    <div class="frame-text">Hindia RKR</div>
+  </div>
+  </div>
+  <div>
+  <div class="frame-item">
+    <img src="images/fr_w2e.png" class="frame-preview" data-frame="images/fr_w2e.png" />
+    <div class="frame-text">W2E</div>
+  </div>
+  </div>
+  
+   <div>
+  <div class="frame-item">
+    <img src="images/fr_coquette.png" class="frame-preview" data-frame="images/fr_coquette.png" />
+    <div class="frame-text">Coquette</div>
+  </div>
+  </div>
+   <div>
+  <div class="frame-item">
+    <img src="images/fr_stroberi.png" class="frame-preview" data-frame="images/fr_stroberi.png" />
+    <div class="frame-text">Shortcake</div>
+  </div>
+  </div>
+  
+   <div>
+  <div class="frame-item">
+    <img src="images/fr_camera.png" class="frame-preview" data-frame="images/fr_camera.png" />
+    <div class="frame-text">Digicam</div>
+  </div>
+  
+  </div>
+  </div>
+</div>
+
+    <div class="filter-select">
+      <h3>Filter</h3>
+      <div id="filterPreviewContainer" class="filter-preview-container"></div>
+    </div>
+
+    <div style="height: 15px;"></div>
+
+
+    <div class="action-buttons">
+      <button id="saveBtn">Save Archive</button>
+      <button onclick="downloadImage()">Download</button>
+    </div>
+  </div>
+
+  
+</main>
+<div style="height: 180px;"></div>
+
+<footer class="footer">
+  <p>&copy; 2025 The Memory Club. All rights reserved.</p>
+</footer>
+
+<script src="editing.js"></script>
+</body>
+</html>
