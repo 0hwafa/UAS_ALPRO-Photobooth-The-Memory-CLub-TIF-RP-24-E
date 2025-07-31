@@ -68,12 +68,6 @@ body {
   border-radius: 6px;
 }
 
-.frame-item {
-  text-align: center;
-  padding: 4px 4px 2px 4px; /* atas kanan bawah kiri */
-  background: #ffffff;
-  border-radius: 8px;
-}
 
 
 .frame-preview.selected {
@@ -182,6 +176,8 @@ button:active {
   gap: 15px; /* kasih jarak horizontal antar tombol */
 }
 
+
+
 .footer {
   width: 100%;
   background-color: #8FBFEF;
@@ -195,7 +191,7 @@ button:active {
 }
 
 /* ======================== */
-/* 📱 Tampilan Mobile View */
+/* Tampilan Mobile View */
 /* ======================== */
 @media (max-width: 768px) {
  header {
@@ -241,6 +237,8 @@ button:active {
   padding: 4px;
   background: #f8f8f8;
   border-radius: 8px;
+  position: center;
+
 }
 
   .frame-text {
