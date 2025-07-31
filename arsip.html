@@ -61,20 +61,75 @@ document.addEventListener('DOMContentLoaded', function () {
         const img = document.createElement('img');
         img.src = item.path;
         img.alt = item.nama_foto;
-        img.style.width = '200px';
+        img.style.width = '120px';
         img.style.height = 'auto';
         img.style.margin = '10px';
         img.style.borderRadius = '10px';
+        img.style.maxWidth = '100%';
+        img.style.display = 'block';
 
+        // Responsive: kecilkan di mobile
+        const style = document.createElement('style');
+        style.innerHTML = `
+          @media (max-width: 600px) {
+            .photo-card img {
+              width: 80px !important;
+              margin: 6px !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+
+        // Container untuk tombol
+        const buttonContainer = document.createElement('div');
+        buttonContainer.style.display = 'flex';
+        buttonContainer.style.gap = '8px';
+        buttonContainer.style.marginTop = '8px';
+        buttonContainer.style.justifyContent = 'center';
+
+        // Tombol Download
+        const downloadBtn = document.createElement('button');
+        downloadBtn.innerHTML = '⬇️'; // Icon download
+        downloadBtn.title = 'Download foto';
+        downloadBtn.style.padding = '6px 10px';
+        downloadBtn.style.border = 'none';
+        downloadBtn.style.background = '#4CAF50';
+        downloadBtn.style.color = 'white';
+        downloadBtn.style.borderRadius = '6px';
+        downloadBtn.style.cursor = 'pointer';
+        downloadBtn.style.fontSize = '14px';
+
+        downloadBtn.onclick = () => {
+          // Buat link download temporary
+          const link = document.createElement('a');
+          link.href = `download_foto.php?id=${item.id}`;
+          link.download = item.nama_foto;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+
+        downloadBtn.onmouseover = () => {
+          downloadBtn.style.background = '#45a049';
+          downloadBtn.style.transform = 'translateY(-1px)';
+        };
+
+        downloadBtn.onmouseout = () => {
+          downloadBtn.style.background = '#4CAF50';
+          downloadBtn.style.transform = 'translateY(0)';
+        };
+
+        // Tombol Delete
         const delBtn = document.createElement('button');
-        delBtn.innerText = 'Hapus';
-        delBtn.style.marginTop = '5px';
+        delBtn.innerHTML = '🗑️'; // Icon delete
+        delBtn.title = 'Hapus foto';
         delBtn.style.padding = '6px 10px';
         delBtn.style.border = 'none';
         delBtn.style.background = '#ff4d4d';
         delBtn.style.color = 'white';
         delBtn.style.borderRadius = '6px';
         delBtn.style.cursor = 'pointer';
+        delBtn.style.fontSize = '14px';
 
         delBtn.onclick = () => {
           if (confirm('Yakin ingin menghapus foto ini?')) {
@@ -96,8 +151,23 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         };
 
+        delBtn.onmouseover = () => {
+          delBtn.style.background = '#e63946';
+          delBtn.style.transform = 'translateY(-1px)';
+        };
+
+        delBtn.onmouseout = () => {
+          delBtn.style.background = '#ff4d4d';
+          delBtn.style.transform = 'translateY(0)';
+        };
+
+        // Tambahkan tombol ke container
+        buttonContainer.appendChild(downloadBtn);
+        buttonContainer.appendChild(delBtn);
+
+        // Tambahkan elemen ke card
         card.appendChild(img);
-        card.appendChild(delBtn);
+        card.appendChild(buttonContainer);
         container.appendChild(card);
       });
     })
