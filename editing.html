@@ -41,116 +41,171 @@
 
     <div class="frame-select">
       <h3>Template Frame</h3>
-      <div id="frameOptions">
-        <div id="frameOptions">
-  <div class="frame-item">
+  <div id="frameOptions">
+  
+  <div class="frame-item" data-kind="Anime" data-name="Totoro" >
     <img src="images/frame_totoro.png" class="frame-preview" data-frame="images/frame_totoro.png" />
     <div class="frame-text">Totoro</div>
   </div>
-  </div>
+  
+
 
   <!-- Anime -->
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Anime" data-name="JJK Megumi">
     <img src="images/frame_megumi.png" class="frame-preview" data-frame="images/frame_megumi.png" />
     <div class="frame-text">JJK Megumi</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+  <div class="frame-item" data-kind="Game" data-name="GI Kazuha">
     <img src="images/fr_kazuha.png" class="frame-preview" data-frame="images/fr_kazuha.png" />
     <div class="frame-text">GI: Kazuha</div>
   </div>
   </div>
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Game" data-name="GI Ayato">
     <img src="images/fr_ayato.png" class="frame-preview" data-frame="images/fr_ayato.png" />
     <div class="frame-text">GI: Ayato</div>
   </div>
   </div>
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Game"  data-name="GI Hutao">
     <img src="images/fr_hutao.png" class="frame-preview" data-frame="images/fr_hutao.png" />
     <div class="frame-text">GI: Hutao</div>
   </div>
   </div>
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Game"  data-name="GI Furina">
     <img src="images/fr_furina.png" class="frame-preview" data-frame="images/fr_furina.png" />
     <div class="frame-text">GI: Furina</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Game"  data-name="HSR Castorice">
     <img src="images/frame_Castorice.png" class="frame-preview" data-frame="images/frame_Castorice.png" />
-    <div class="frame-text">Castorice</div>
+    <div class="frame-text">HSR: Castorice</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Cute"  data-name="Kucing">
     <img src="images/frame_kocheng.png" class="frame-preview" data-frame="images/frame_kocheng.png" />
     <div class="frame-text">Kuchhiing</div>
   </div>
+
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Anime" data-name="One Piece">
     <img src="images/fr_op.png" class="frame-preview" data-frame="images/fr_op.png" />
     <div class="frame-text">One Piece</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Band" data-name="AM">
     <img src="images/fr_am.png" class="frame-preview" data-frame="images/fr_am.png" />
     <div class="frame-text">Arctic Monkeys</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Band" data-name="MCR">
     <img src="images/fr_mcr.png" class="frame-preview" data-frame="images/fr_mcr.png" />
     <div class="frame-text">MCR</div>
   </div>
   </div>
   <div>
-   <div class="frame-item">
+   <div class="frame-item" data-kind="Band" data-name="THE 1975">
     <img src="images/fr_1975.png" class="frame-preview" data-frame="images/fr_1975.png" />
     <div class="frame-text">The 1975</div>
   </div>
   </div>
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Band" data-name="HINDIA RKR">
     <img src="images/fr_hindia_rkr.png" class="frame-preview" data-frame="images/fr_hindia_rkr.png" />
     <div class="frame-text">Hindia RKR</div>
   </div>
   </div>
   <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Band" data-name="W2E">
     <img src="images/fr_w2e.png" class="frame-preview" data-frame="images/fr_w2e.png" />
     <div class="frame-text">W2E</div>
   </div>
   </div>
   
    <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Cute" data-name="Coquette">
     <img src="images/fr_coquette.png" class="frame-preview" data-frame="images/fr_coquette.png" />
     <div class="frame-text">Coquette</div>
   </div>
   </div>
    <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Cute" data-name="Shortcake">
     <img src="images/fr_stroberi.png" class="frame-preview" data-frame="images/fr_stroberi.png" />
     <div class="frame-text">Shortcake</div>
   </div>
   </div>
   
    <div>
-  <div class="frame-item">
+  <div class="frame-item" data-kind="Cute" data-name="Digicam">
     <img src="images/fr_camera.png" class="frame-preview" data-frame="images/fr_camera.png" />
     <div class="frame-text">Digicam</div>
   </div>
   
   </div>
   </div>
+  <!-- Kind filter + kind sort -->
+<div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+  <label for="kindFilter" style="font-size:14px;">Kind:</label>
+  <select id="kindFilter" style="padding:6px 10px; border-radius:8px;">
+    <option value="all">All</option>
+    <option value="band">Band</option>
+    <option value="anime">Anime</option>
+    <!-- add more kinds here -->
+  </select>
+ <button id="sortDataNameAZ" class="btn-sort" type="button">Name A–Z</button>
+  <button id="sortDataNameZA" class="btn-sort" type="button">Name Z–A</button>
 </div>
+
+<!-- Container baru untuk daftar frame (akan diisi ulang oleh JS) -->
+<div id="frameOptionsList" class="frame-grid">
+  <!-- .frame-item yang lama akan dipindahkan ke sini oleh JS -->
+   
+  <style>
+.frame-preview {
+  width: 75px;
+  height: 170px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+.frame-item {
+  text-align: center;
+  padding: 4px 4px 2px 4px; /* atas kanan bawah kiri */
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.frame-text {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+.frame-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+}
+</style>
+
+</div>
+
+</div>
+<script src="frame-sort.js" defer></script>
+
+
 
     <div class="filter-select">
       <h3>Filter</h3>
@@ -175,5 +230,6 @@
 </footer>
 
 <script src="editing.js"></script>
+
 </body>
 </html>
